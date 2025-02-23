@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Project1
-=======
 # Applying Migrations in EF Core
 ## Create Migrations
 	1. Windows command prompt: "Add-Migration MigrationName [options]"
@@ -17,4 +14,3 @@
 	1. Windows command prompt: "Remove-Migration [options]"
 	2. dotnet CLI: "dotnet ef migrations remove [options]"
 	=>> EX-PMC: "Remove-Migration"
->>>>>>> 672c8e1 (init commit)
