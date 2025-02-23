@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="DependencyInjection\Exceptions\" />
+    <Folder Include="DependencyInjection\Options\" />
+    <Folder Include="UserCases\V1\Product\Commands\" />
+    <Folder Include="UserCases\V1\Product\EventHandlers\" />
+    <Folder Include="UserCases\V2\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TravelSync.Shared\TravelSync.Shared\TravelSync.Shared.csproj" />
+    <ProjectReference Include="..\TravelSync.Domain\TravelSync.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

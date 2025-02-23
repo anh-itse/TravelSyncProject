@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "EczACJ3zRD8=",
+  "success": true,
+  "projectFilePath": "X:\\6_Projects\\TravelSync\\src\\TravelSync.Infrastructure\\TravelSync.Infrastructure.Dapper\\TravelSync.Infrastructure.Dapper.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\tuangd\\.nuget\\packages\\sonaranalyzer.csharp\\10.6.0.109712\\sonaranalyzer.csharp.10.6.0.109712.nupkg.sha512"
+  ],
+  "logs": []
+}

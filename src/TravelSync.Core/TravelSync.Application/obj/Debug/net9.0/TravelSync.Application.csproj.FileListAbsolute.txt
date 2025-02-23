@@ -1,0 +1,17 @@
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\bin\Debug\net9.0\TravelSync.Application.deps.json
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\bin\Debug\net9.0\TravelSync.Application.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\bin\Debug\net9.0\TravelSync.Application.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\bin\Debug\net9.0\TravelSync.Domain.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\bin\Debug\net9.0\TravelSync.Shared.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\bin\Debug\net9.0\TravelSync.Shared.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\bin\Debug\net9.0\TravelSync.Domain.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.csproj.AssemblyReference.cache
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.GeneratedMSBuildEditorConfig.editorconfig
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.AssemblyInfoInputs.cache
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.AssemblyInfo.cs
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.csproj.CoreCompileInputs.cache
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSy.32B0D1C1.Up2Date
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\refint\TravelSync.Application.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\ref\TravelSync.Application.dll

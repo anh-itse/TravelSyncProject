@@ -1,0 +1,12 @@
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\bin\Debug\net9.0\TravelSync.Domain.deps.json
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\bin\Debug\net9.0\TravelSync.Domain.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\bin\Debug\net9.0\TravelSync.Domain.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.csproj.AssemblyReference.cache
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.GeneratedMSBuildEditorConfig.editorconfig
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.AssemblyInfoInputs.cache
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.AssemblyInfo.cs
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.csproj.CoreCompileInputs.cache
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\refint\TravelSync.Domain.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\ref\TravelSync.Domain.dll

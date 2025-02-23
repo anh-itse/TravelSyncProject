@@ -1,0 +1,12 @@
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\bin\Debug\net9.0\TravelSync.Shared.deps.json
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\bin\Debug\net9.0\TravelSync.Shared.dll
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\bin\Debug\net9.0\TravelSync.Shared.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.csproj.AssemblyReference.cache
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.GeneratedMSBuildEditorConfig.editorconfig
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.AssemblyInfoInputs.cache
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.AssemblyInfo.cs
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.csproj.CoreCompileInputs.cache
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.dll
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\refint\TravelSync.Shared.dll
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.pdb
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\ref\TravelSync.Shared.dll

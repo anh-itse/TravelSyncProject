@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "XQBnaLGrV/qTfw/Tl6KIC9a1AsGhWggFqKFdcun9gq0=",
+  "Source": "TravelSync.AppHost",
+  "BasePath": "_content/TravelSync.AppHost",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

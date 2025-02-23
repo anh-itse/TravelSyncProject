@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 1/ ServerAPI (APS.NET Web Application)
 
 Install-Package Newtonsoft.Json -Version 10.0.3
@@ -140,3 +141,94 @@ Authorization: Bearer Token
 
 
 
+=======
+﻿1. Create file: 
+    + SolutionItems => .editorconfig
+
+2. Create file: 
+    + SolutionItems => Directory.Build.props
+
+3. Create file: 
+    + AssemblyReference: AppHost, Presentation, Shared, Infrastructure, Application, Domain
+
+4. TravelSync.Architecture.Tests (packages: NetArchTest.Rules, FluentAssertions)
+    + NamingConventionTests.cs
+    + ReferenceTests.cs
+    + SealedTests.cs
+
+6. Create Dispatch
+    +   TravelSync.Application.Abstractions.Dispatching
+        -   IDispatcher.cs
+        -   ICommand.cs
+        -   ICommandHandler.cs
+        -   IQuery.cs
+        -   IQueryHandler.cs
+    +   TravelSync.Domain.Abstractions.Events       
+        -   IDomainEvent.cs
+        -   IDomainEventHandler.cs
+    +   TravelSync.Application.DependencyInjection.Extensions
+        -   ApplicationExtensions.cs
+        -   DispatchingRegistration.cs
+    +   TravelSync.Infrastructure.Dispatching
+        -   Dispatcher.cs
+    +   TravelSync.Infrastructure.DependencyInjection.Extensions
+        -   InfrastructureExtension.cs => AddDispatching: services.AddScoped<IDispatcher, Dispatcher>();
+
+7. Create LogHelpers
+    +   TravelSync.Shared.Helpers
+        -   LogHelpers.cs
+
+8. Create Decorators
+    +   TravelSync.Application.Decorators
+        -   AuditLogs
+            -   AuditLogAttribute.cs
+            -   LoggingCommandHandlerDecorator.cs
+            -   LoggingDomainEventHandlerDecorator.cs
+            -   LoggingQueryHandlerDecorator.cs
+        -   DatabaseRetry
+            -   DatabaseRetryAttribute.cs
+            -   DatabaseRetryBase.cs
+            -   DatabaseRetryCommanDecorator.cs
+            -   DatabaseRetryQueryDecorator.cs
+        -   DecoratorAttribute.cs
+    +   TravelSync.Application.DependencyInjection.Extensions
+        -   DecoratorRegistration.cs
+    +   TravelSync.Domain.Helpers
+        -   DecoratorHelper.cs
+    +   TravelSync.Shared.ExtensionMethods
+        -   TypeExtensions.cs
+
+9. Create:
+    +   TravelSync.Domain.Shared
+        -   AppError.cs
+        -   AppResult.cs
+
+10. Create Behaviors
+    +   TravelSync.Application.Behaviors
+        -   ValidationPipelineBehavior.cs
+        -   ResultHandlingPipelineBehavior.cs
+    +   TravelSync.Infrastructure.DependencyInjection.Extensions
+        -   InfrastructureExtension.cs =>  Đăng ký PipelineBehavior
+
+11. Create DbContext
+    +   TravelSync.Infrastructure.Persistence
+        -   ApplicationDbContext.cs
+        -   TravelSyncDbContextFactory.cs
+        -   TravelSyncDbContextSeed.cs
+    +   TravelSync.Persistence.DependencyInjection.Extensions
+        -   PersistenceExtension.cs 
+        -   RepositoryRegistration.cs 
+        -   SqlRegistration.cs 
+
+12. Create Repository
+    +   TravelSync.Domain.Abstractions.Repositories
+        -   IRepository.cs
+        -   IRepository.cs
+    +   TravelSync.Domain.Abstractions
+        -   IScopedDependency.cs
+    +   TravelSync.Infrastructure.Persistence.Repositories
+        -   Repository.cs
+    +   TravelSync.Persistence.DependencyInjection.Extensions
+        -   RepositoryRegistration.cs
+      
+>>>>>>> 672c8e1 (init commit)

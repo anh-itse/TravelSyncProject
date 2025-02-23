@@ -1,0 +1,98 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{37449255-C760-42D5-A263-40250044AEAC}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+		note.txt = note.txt
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7C9B16F4-1E0D-4024-BC54-9AEAF1994359}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{10B30E22-C328-4A3E-A0A5-D2B9B124CCAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TravelSync.API", "TravelSync.API", "{3118CE9E-E425-473F-9D2E-E869244F34BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TravelSync.Core", "TravelSync.Core", "{7D61CC1E-331B-44B6-991D-0340ABFD9FE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TravelSync.Infrastructure", "TravelSync.Infrastructure", "{229EEAF1-92B9-48B7-9DDF-A4239BA72BC4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TravelSync.Shared", "TravelSync.Shared", "{61B39370-ABEF-49AD-B229-45FBDCBE8B9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.Presentation", "src\TravelSync.API\TravelSync.Presentation\TravelSync.Presentation.csproj", "{55446726-F462-4DD9-ADBF-9CD6EDEB240E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.Application", "src\TravelSync.Core\TravelSync.Application\TravelSync.Application.csproj", "{3271306E-C995-4781-8E81-B6A95748B74C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.Domain", "src\TravelSync.Core\TravelSync.Domain\TravelSync.Domain.csproj", "{02BB84DD-9B98-475B-96C9-626DBA0A50BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.Infrastructure", "src\TravelSync.Infrastructure\TravelSync.Infrastructure\TravelSync.Infrastructure.csproj", "{0C6768EE-F9B8-4363-B3EC-0BBB4944349B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.Persistence", "src\TravelSync.Infrastructure\TravelSync.Persistence\TravelSync.Persistence.csproj", "{E8D1C92F-B929-4468-9816-379F36DD7D73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.Shared", "src\TravelSync.Shared\TravelSync.Shared\TravelSync.Shared.csproj", "{38A50CC3-7FCE-4702-BE04-748BF87541BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.AppHost", "src\TravelSync.API\TravelSync.AppHost\TravelSync.AppHost.csproj", "{C49E3F14-462F-42AB-89C3-F45C5EAFB349}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TravelSync.Architecture.Tests", "test\TravelSync.Architecture.Tests\TravelSync.Architecture.Tests.csproj", "{6188DAA2-B5B8-4FAD-9DF3-B8C0D8D414D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{55446726-F462-4DD9-ADBF-9CD6EDEB240E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55446726-F462-4DD9-ADBF-9CD6EDEB240E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55446726-F462-4DD9-ADBF-9CD6EDEB240E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55446726-F462-4DD9-ADBF-9CD6EDEB240E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3271306E-C995-4781-8E81-B6A95748B74C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3271306E-C995-4781-8E81-B6A95748B74C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3271306E-C995-4781-8E81-B6A95748B74C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3271306E-C995-4781-8E81-B6A95748B74C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02BB84DD-9B98-475B-96C9-626DBA0A50BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02BB84DD-9B98-475B-96C9-626DBA0A50BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02BB84DD-9B98-475B-96C9-626DBA0A50BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02BB84DD-9B98-475B-96C9-626DBA0A50BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C6768EE-F9B8-4363-B3EC-0BBB4944349B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6768EE-F9B8-4363-B3EC-0BBB4944349B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6768EE-F9B8-4363-B3EC-0BBB4944349B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6768EE-F9B8-4363-B3EC-0BBB4944349B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8D1C92F-B929-4468-9816-379F36DD7D73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8D1C92F-B929-4468-9816-379F36DD7D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8D1C92F-B929-4468-9816-379F36DD7D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8D1C92F-B929-4468-9816-379F36DD7D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38A50CC3-7FCE-4702-BE04-748BF87541BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A50CC3-7FCE-4702-BE04-748BF87541BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A50CC3-7FCE-4702-BE04-748BF87541BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A50CC3-7FCE-4702-BE04-748BF87541BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C49E3F14-462F-42AB-89C3-F45C5EAFB349}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C49E3F14-462F-42AB-89C3-F45C5EAFB349}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C49E3F14-462F-42AB-89C3-F45C5EAFB349}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C49E3F14-462F-42AB-89C3-F45C5EAFB349}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6188DAA2-B5B8-4FAD-9DF3-B8C0D8D414D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6188DAA2-B5B8-4FAD-9DF3-B8C0D8D414D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6188DAA2-B5B8-4FAD-9DF3-B8C0D8D414D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6188DAA2-B5B8-4FAD-9DF3-B8C0D8D414D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3118CE9E-E425-473F-9D2E-E869244F34BB} = {7C9B16F4-1E0D-4024-BC54-9AEAF1994359}
+		{7D61CC1E-331B-44B6-991D-0340ABFD9FE1} = {7C9B16F4-1E0D-4024-BC54-9AEAF1994359}
+		{229EEAF1-92B9-48B7-9DDF-A4239BA72BC4} = {7C9B16F4-1E0D-4024-BC54-9AEAF1994359}
+		{61B39370-ABEF-49AD-B229-45FBDCBE8B9A} = {7C9B16F4-1E0D-4024-BC54-9AEAF1994359}
+		{55446726-F462-4DD9-ADBF-9CD6EDEB240E} = {3118CE9E-E425-473F-9D2E-E869244F34BB}
+		{3271306E-C995-4781-8E81-B6A95748B74C} = {7D61CC1E-331B-44B6-991D-0340ABFD9FE1}
+		{02BB84DD-9B98-475B-96C9-626DBA0A50BB} = {7D61CC1E-331B-44B6-991D-0340ABFD9FE1}
+		{0C6768EE-F9B8-4363-B3EC-0BBB4944349B} = {229EEAF1-92B9-48B7-9DDF-A4239BA72BC4}
+		{E8D1C92F-B929-4468-9816-379F36DD7D73} = {229EEAF1-92B9-48B7-9DDF-A4239BA72BC4}
+		{38A50CC3-7FCE-4702-BE04-748BF87541BE} = {61B39370-ABEF-49AD-B229-45FBDCBE8B9A}
+		{C49E3F14-462F-42AB-89C3-F45C5EAFB349} = {3118CE9E-E425-473F-9D2E-E869244F34BB}
+		{6188DAA2-B5B8-4FAD-9DF3-B8C0D8D414D7} = {10B30E22-C328-4A3E-A0A5-D2B9B124CCAF}
+	EndGlobalSection
+EndGlobal
