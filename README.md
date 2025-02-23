@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Project1
-=======
 # Applying Migrations in EF Core
 ## Create Migrations
 	1. Windows command prompt: "Add-Migration MigrationName [options]"
