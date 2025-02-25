@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TravelSync.Persistence.Constants;
-using TravelSync.Persistence.Entities.Identity;
+using TravelSync.Domain.Constants;
+using TravelSync.Domain.Entities;
 
 namespace TravelSync.Persistence.Configurations;
 
@@ -39,15 +39,11 @@ internal sealed class AppFunctionConfiguration : IEntityTypeConfiguration<AppFun
             .HasDefaultValue(null);
 
         // Each User can have many Permission
-        builder.HasMany<AppPermission>(e => e.Permissions)
-            .WithOne()
-            .HasForeignKey(e => e.FunctionId)
-            .IsRequired();
+        builder.HasMany<AppPermission>(e => e.AppPermissions)
+            .WithOne();
 
         // Each User can have many ActionInFunction
         builder.HasMany<ActionInFunction>(e => e.ActionInFunctions)
-            .WithOne()
-            .HasForeignKey(e => e.FunctionId)
-            .IsRequired();
+            .WithOne();
     }
 }

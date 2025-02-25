@@ -10,3 +10,4 @@ X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.
 X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\refint\TravelSync.Shared.dll
 X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.pdb
 X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\ref\TravelSync.Shared.dll
+X:\6_Projects\TravelSync\src\TravelSync.Shared\TravelSync.Shared\obj\Debug\net9.0\TravelSync.Shared.sourcelink.json

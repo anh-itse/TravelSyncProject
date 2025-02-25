@@ -1,22 +1,26 @@
 ﻿using System.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using TravelSync.Domain.Abstractions;
 
 namespace TravelSync.Persistence.Repositories;
 
-public class UnitOfWork(DbContext context) : IUnitOfWork
+public class UnitOfWork(ApplicationDbContext context) : IUnitOfWork
 {
-    private readonly DbContext _context = context;
     private IDbContextTransaction? _transaction;
+    private bool _disposed;
 
-    public IDbTransaction? CurrentTransaction => this._transaction?.GetDbTransaction();
-
-    public async Task BeginTransactionAsync(CancellationToken cancellationToken = default)
+    public IDbTransaction? GetCurrentTransaction()
     {
-        if (this._transaction != null) return;
+        return this._transaction?.GetDbTransaction();
+    }
 
-        this._transaction = await this._context.Database.BeginTransactionAsync(cancellationToken);
+    public async Task<IUnitOfWork> BeginTransactionAsync(CancellationToken cancellationToken = default)
+    {
+        if (this._transaction != null) return this;
+
+        this._transaction = await context.Database.BeginTransactionAsync(cancellationToken);
+
+        return this;
     }
 
     public async Task CommitAsync(CancellationToken cancellationToken = default)
@@ -25,7 +29,7 @@ public class UnitOfWork(DbContext context) : IUnitOfWork
 
         try
         {
-            await this._context.SaveChangesAsync(cancellationToken);
+            await context.SaveChangesAsync(cancellationToken);
             await this._transaction.CommitAsync(cancellationToken);
         }
         catch
@@ -51,17 +55,42 @@ public class UnitOfWork(DbContext context) : IUnitOfWork
 
     public async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
     {
-        return await this._context.SaveChangesAsync(cancellationToken);
+        return await context.SaveChangesAsync(cancellationToken);
     }
 
     public async ValueTask DisposeAsync()
     {
-        ArgumentNullException.ThrowIfNull(this._transaction);
+        await this.DisposeAsync(true);
+        GC.SuppressFinalize(this);
+    }
+
+    protected virtual async ValueTask DisposeAsync(bool disposing)
+    {
+        if (this._disposed) return;
+
+        this._disposed = true;
+
+        if (!disposing || this._transaction is null) return;
 
         await this._transaction.DisposeAsync();
         this._transaction = null;
+    }
 
-        await this._context.DisposeAsync();
+    public void Dispose()
+    {
+        this.Dispose(true);
         GC.SuppressFinalize(this);
+    }
+
+    protected virtual void Dispose(bool disposing)
+    {
+        if (this._disposed) return;
+
+        this._disposed = true;
+
+        if (!disposing || this._transaction is null) return;
+
+        this._transaction.Dispose();
+        this._transaction = null;
     }
 }

@@ -15,3 +15,4 @@ X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\ne
 X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\refint\TravelSync.Application.dll
 X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.pdb
 X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\ref\TravelSync.Application.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Application\obj\Debug\net9.0\TravelSync.Application.sourcelink.json

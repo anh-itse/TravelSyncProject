@@ -113,12 +113,16 @@ namespace TravelSync.Persistence.Migrations
                     b.ToTable("AppUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.ActionInFunction", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.ActionInFunction", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("ActionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("FunctionId")
+                    b.Property<Guid?>("AppFunctionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
@@ -129,7 +133,7 @@ namespace TravelSync.Persistence.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("FunctionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
@@ -145,14 +149,16 @@ namespace TravelSync.Persistence.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.HasKey("ActionId", "FunctionId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("FunctionId");
+                    b.HasIndex("ActionId");
+
+                    b.HasIndex("AppFunctionId");
 
                     b.ToTable("ActionInFunctions", (string)null);
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppAction", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppAction", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -198,7 +204,7 @@ namespace TravelSync.Persistence.Migrations
                     b.ToTable("AppActions", (string)null);
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppFunction", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppFunction", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -259,15 +265,16 @@ namespace TravelSync.Persistence.Migrations
                     b.ToTable("AppFunctions", (string)null);
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppPermission", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppPermission", b =>
                 {
-                    b.Property<Guid>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("FunctionId")
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ActionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AppFunctionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
@@ -278,7 +285,7 @@ namespace TravelSync.Persistence.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("FunctionId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<bool>("IsDeleted")
@@ -294,16 +301,21 @@ namespace TravelSync.Persistence.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
-                    b.HasKey("RoleId", "FunctionId", "ActionId");
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("ActionId");
 
-                    b.HasIndex("FunctionId");
+                    b.HasIndex("AppFunctionId");
+
+                    b.HasIndex("RoleId");
 
                     b.ToTable("AppPermissions", (string)null);
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppRole", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppRole", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -357,7 +369,7 @@ namespace TravelSync.Persistence.Migrations
                     b.ToTable("AppRoles", (string)null);
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppUser", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -474,7 +486,84 @@ namespace TravelSync.Persistence.Migrations
                     b.ToTable("AppUsers", (string)null);
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Product", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.Language", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CultureCode")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages", (string)null);
+                });
+
+            modelBuilder.Entity("TravelSync.Domain.Entities.Localization", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Key")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<Guid>("LanguageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("ModifiedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Value")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("Localizations", (string)null);
+                });
+
+            modelBuilder.Entity("TravelSync.Domain.Entities.Product", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -515,7 +604,7 @@ namespace TravelSync.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<System.Guid>", b =>
                 {
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppRole", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppRole", null)
                         .WithMany("Claims")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -524,7 +613,7 @@ namespace TravelSync.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<System.Guid>", b =>
                 {
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppUser", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppUser", null)
                         .WithMany("Claims")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -533,7 +622,7 @@ namespace TravelSync.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<System.Guid>", b =>
                 {
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppUser", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppUser", null)
                         .WithMany("Logins")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -542,13 +631,13 @@ namespace TravelSync.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<System.Guid>", b =>
                 {
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppRole", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppRole", null)
                         .WithMany("UserRoles")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppUser", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppUser", null)
                         .WithMany("UserRoles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -557,64 +646,71 @@ namespace TravelSync.Persistence.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<System.Guid>", b =>
                 {
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppUser", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppUser", null)
                         .WithMany("Tokens")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.ActionInFunction", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.ActionInFunction", b =>
                 {
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppAction", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppAction", null)
                         .WithMany("ActionInFunctions")
                         .HasForeignKey("ActionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppFunction", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppFunction", null)
                         .WithMany("ActionInFunctions")
-                        .HasForeignKey("FunctionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AppFunctionId");
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppPermission", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppPermission", b =>
                 {
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppAction", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppAction", null)
                         .WithMany("AppPermissions")
                         .HasForeignKey("ActionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppFunction", null)
-                        .WithMany("Permissions")
-                        .HasForeignKey("FunctionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("TravelSync.Domain.Entities.AppFunction", null)
+                        .WithMany("AppPermissions")
+                        .HasForeignKey("AppFunctionId");
 
-                    b.HasOne("TravelSync.Persistence.Entities.Identity.AppRole", null)
+                    b.HasOne("TravelSync.Domain.Entities.AppRole", null)
                         .WithMany("Permissions")
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppAction", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.Localization", b =>
+                {
+                    b.HasOne("TravelSync.Domain.Entities.Language", "Language")
+                        .WithMany("Localizations")
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Language");
+                });
+
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppAction", b =>
                 {
                     b.Navigation("ActionInFunctions");
 
                     b.Navigation("AppPermissions");
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppFunction", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppFunction", b =>
                 {
                     b.Navigation("ActionInFunctions");
 
-                    b.Navigation("Permissions");
+                    b.Navigation("AppPermissions");
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppRole", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppRole", b =>
                 {
                     b.Navigation("Claims");
 
@@ -623,7 +719,7 @@ namespace TravelSync.Persistence.Migrations
                     b.Navigation("UserRoles");
                 });
 
-            modelBuilder.Entity("TravelSync.Persistence.Entities.Identity.AppUser", b =>
+            modelBuilder.Entity("TravelSync.Domain.Entities.AppUser", b =>
                 {
                     b.Navigation("Claims");
 
@@ -632,6 +728,11 @@ namespace TravelSync.Persistence.Migrations
                     b.Navigation("Tokens");
 
                     b.Navigation("UserRoles");
+                });
+
+            modelBuilder.Entity("TravelSync.Domain.Entities.Language", b =>
+                {
+                    b.Navigation("Localizations");
                 });
 #pragma warning restore 612, 618
         }

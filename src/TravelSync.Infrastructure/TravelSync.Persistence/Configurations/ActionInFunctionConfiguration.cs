@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TravelSync.Persistence.Constants;
-using TravelSync.Persistence.Entities.Identity;
+using TravelSync.Domain.Constants;
+using TravelSync.Domain.Entities;
 
 namespace TravelSync.Persistence.Configurations;
 
@@ -13,6 +13,6 @@ internal sealed class ActionInFunctionConfiguration : IEntityTypeConfiguration<A
 
         builder.ToTable(TableNames.ActionInFunctions);
 
-        builder.HasKey(x => new { x.ActionId, x.FunctionId });
+        builder.HasKey(x => x.Id);
     }
 }

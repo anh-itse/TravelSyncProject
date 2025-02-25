@@ -10,18 +10,18 @@ public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IReposi
     private readonly DbSet<TEntity> _dbSet = dbContext.Set<TEntity>();
 
     public async Task<TEntity?> GetByIdAsync(TKey id, CancellationToken cancellationToken = default)
-        => await _dbSet.FindAsync([id], cancellationToken);
+        => await this._dbSet.FindAsync([id], cancellationToken);
 
     public async Task<TEntity?> GetFirstAsync(Expression<Func<TEntity, bool>> predicate,  CancellationToken cancellationToken = default)
-        => await _dbSet.FirstOrDefaultAsync(predicate, cancellationToken);
+        => await this._dbSet.FirstOrDefaultAsync(predicate, cancellationToken);
 
-    public IQueryable<TEntity> GetQueryable() =>  _dbSet;
+    public IQueryable<TEntity> GetQueryable() =>  this._dbSet;
 
     public async Task<List<TDto>> GetListAsync<TDto>(
         Expression<Func<TEntity, bool>> predicate,
         Expression<Func<TEntity, TDto>> selector,
         CancellationToken cancellationToken = default)
-        => await _dbSet.Where(predicate).Select(selector).ToListAsync(cancellationToken);
+        => await this._dbSet.Where(predicate).Select(selector).ToListAsync(cancellationToken);
 
     public async Task<(List<TDto> Items, int TotalCount)> GetPagedListAsync<TDto>(
      IQueryable<TDto> query,
@@ -45,30 +45,30 @@ public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IReposi
     }
 
     public async Task AddAsync(TEntity entity, CancellationToken cancellationToken = default)
-        => await _dbSet.AddAsync(entity, cancellationToken);
+        => await this._dbSet.AddAsync(entity, cancellationToken);
 
     public async Task AddRangeAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default)
-        => await _dbSet.AddRangeAsync(entities, cancellationToken);
+        => await this._dbSet.AddRangeAsync(entities, cancellationToken);
 
     public async Task InsertAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
-        await _dbSet.AddAsync(entity, cancellationToken);
+        await this._dbSet.AddAsync(entity, cancellationToken);
         await dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task<TKey> InsertAndGetIdAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
-        await _dbSet.AddAsync(entity, cancellationToken);
+        await this._dbSet.AddAsync(entity, cancellationToken);
         await dbContext.SaveChangesAsync(cancellationToken);
         var keyProperty = dbContext.Entry(entity).Property<TKey>("Id");
         return keyProperty.CurrentValue!;
     }
 
-    public void Update(TEntity entity) => _dbSet.Update(entity);
+    public void Update(TEntity entity) => this._dbSet.Update(entity);
 
     public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
-        _dbSet.Update(entity);
+        this._dbSet.Update(entity);
         await dbContext.SaveChangesAsync(cancellationToken);
     }
 
@@ -78,36 +78,35 @@ public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IReposi
 
         if (entity is null) return;
 
-        _dbSet.Remove(entity);
+        this._dbSet.Remove(entity);
         await dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task DeleteAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
     {
-        var entities = await _dbSet.Where(predicate).ToListAsync(cancellationToken);
+        var entities = await this._dbSet.Where(predicate).ToListAsync(cancellationToken);
 
         if (entities.Count == 0) return;
 
-        _dbSet.RemoveRange(entities);
+        this._dbSet.RemoveRange(entities);
         await dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public void Delete(TKey id)
     {
-        var entity = _dbSet.Find(id);
+        var entity = this._dbSet.Find(id);
 
         if (entity is null) return;
 
-        _dbSet.Remove(entity);
+        this._dbSet.Remove(entity);
     }
 
     public void Delete(Expression<Func<TEntity, bool>> predicate)
     {
-        var entities = _dbSet.Where(predicate).ToList();
+        var entities = this._dbSet.Where(predicate).ToList();
 
         if (entities.Count == 0) return;
 
-        _dbSet.RemoveRange(entities);
+        this._dbSet.RemoveRange(entities);
     }
 }
-

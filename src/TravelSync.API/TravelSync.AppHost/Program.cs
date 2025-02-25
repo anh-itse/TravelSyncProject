@@ -3,6 +3,7 @@ using TravelSync.Application.DependencyInjection.Extensions;
 using TravelSync.Infrastructure.DependencyInjection.Extensions;
 using TravelSync.Persistence.DependencyInjection.Extensions;
 using TravelSync.Persistence.DependencyInjection.Options;
+using TravelSync.Persistence.Repositories;
 using TravelSync.Presentation;
 
 var builder = WebApplication.CreateBuilder(args);

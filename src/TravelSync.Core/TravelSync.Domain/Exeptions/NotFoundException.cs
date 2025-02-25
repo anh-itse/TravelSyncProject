@@ -1,6 +1,6 @@
 ﻿namespace TravelSync.Domain.Exeptions
 {
-    public abstract class NotFoundException(string message) : DomainException("Not Found", message)
+    public abstract class NotFoundException(string message) : AppException("Not Found", message)
     {
     }
 }

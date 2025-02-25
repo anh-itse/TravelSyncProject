@@ -2,8 +2,8 @@
 
 public static class DbConst
 {
-    public static class  Configurations
+    public static class Configurations
     {
-        public const string DbSchema = ""; 
+        public const string DbSchema = "";
     }
 }

@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Enumerations\" />
-    <Folder Include="Localization\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
 

@@ -49,6 +49,7 @@ public class SealedClassTests
     {
         // Arrange
         var assembly = Application.AssemblyReference.Assembly;
+
         // Act
         var testResult = Types
             .InAssembly(assembly)
@@ -57,6 +58,7 @@ public class SealedClassTests
             .Should()
             .BeSealed()
             .GetResult();
+
         // Assert
         testResult.IsSuccessful.Should().BeTrue();
     }

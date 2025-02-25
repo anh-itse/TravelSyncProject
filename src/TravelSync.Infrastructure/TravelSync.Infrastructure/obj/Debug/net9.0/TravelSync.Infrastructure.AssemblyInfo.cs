@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TravelSync.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+61f7bfb6a4bde142e69f7e7b3627201993ecdfb6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9525a366430fddbdad663e819edc3f669db050b2")]
 [assembly: System.Reflection.AssemblyProductAttribute("TravelSync.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TravelSync.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

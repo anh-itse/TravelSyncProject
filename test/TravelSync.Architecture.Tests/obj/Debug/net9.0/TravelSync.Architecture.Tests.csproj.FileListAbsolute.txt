@@ -176,3 +176,4 @@ X:\6_Projects\TravelSync\test\TravelSync.Architecture.Tests\obj\Debug\net9.0\Tra
 X:\6_Projects\TravelSync\test\TravelSync.Architecture.Tests\obj\Debug\net9.0\TravelSync.Architecture.Tests.genruntimeconfig.cache
 X:\6_Projects\TravelSync\test\TravelSync.Architecture.Tests\obj\Debug\net9.0\ref\TravelSync.Architecture.Tests.dll
 X:\6_Projects\TravelSync\test\TravelSync.Architecture.Tests\bin\Debug\net9.0\Dapper.dll
+X:\6_Projects\TravelSync\test\TravelSync.Architecture.Tests\obj\Debug\net9.0\TravelSync.Architecture.Tests.sourcelink.json

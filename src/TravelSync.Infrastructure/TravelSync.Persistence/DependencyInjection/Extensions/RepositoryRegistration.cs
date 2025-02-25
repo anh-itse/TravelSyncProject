@@ -19,7 +19,7 @@ public static class RepositoryRegistration
         {
             var interfaceType = scopedType.GetInterfaces().FirstOrDefault(i => i.Name == $"I{scopedType.Name}");
 
-            if (interfaceType != null)  services.AddScoped(interfaceType, scopedType);
+            if (interfaceType != null) services.AddScoped(interfaceType, scopedType);
         }
 
         return services;

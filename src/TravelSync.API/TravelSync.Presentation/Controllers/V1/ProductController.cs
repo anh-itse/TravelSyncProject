@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using TravelSync.Application.Abstractions.Dispatching;
+using TravelSync.Application.UserCases.V1.Product.Commands;
+using TravelSync.Domain.DTOs.Products;
 using TravelSync.Presentation.Abstractions;
-using TravelSync.Shared.DTOs.Product;
 
 namespace TravelSync.Presentation.Controllers.V1;
 
@@ -24,12 +24,15 @@ public class ProductController(IDispatcher dispatcher) : ApiController(dispatche
     //    return Ok(product);
     //}
 
-    //[HttpPost]
-    //public async Task<IActionResult> CreateProduct(CreateProductCommand command)
-    //{
-    //    var result = await this.Dispatcher.SendAsync(command);
-    //    return Ok(result);
-    //}
+    [HttpPost("create")]
+    public async Task<IActionResult> CreateProduct(ProductDto product, CancellationToken cancellationToken)
+    {
+        var result = await this.Dispatcher.DispatchAsync(new CreateProductCommand(product), cancellationToken);
+
+        if (result == null || result.IsFailure) return this.BadRequest(result);
+
+        return this.Ok(result);
+    }
 
     //[HttpPut("{id}")]
     //public async Task<IActionResult> UpdateProduct(int id, UpdateProductCommand command)

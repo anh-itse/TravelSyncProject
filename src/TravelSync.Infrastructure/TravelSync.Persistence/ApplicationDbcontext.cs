@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using System.Linq.Expressions;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using TravelSync.Domain.Abstractions.Entities;
-using TravelSync.Persistence.Entities.Identity;
+using TravelSync.Domain.Entities;
 using TravelSync.Persistence.Interceptors;
 
 namespace TravelSync.Persistence;

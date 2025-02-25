@@ -1,5 +1,5 @@
 ﻿using TravelSync.Application.Abstractions.Dispatching;
-using TravelSync.Shared.DTOs.Product;
+using TravelSync.Domain.DTOs.Products;
 
 namespace TravelSync.Application.UserCases.V1.Product.Queries;
 

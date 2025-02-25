@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Abstractions\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="DTOs\" />
   </ItemGroup>
 
   <ItemGroup>

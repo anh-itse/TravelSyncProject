@@ -10,3 +10,4 @@ X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\
 X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\refint\TravelSync.Domain.dll
 X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.pdb
 X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\ref\TravelSync.Domain.dll
+X:\6_Projects\TravelSync\src\TravelSync.Core\TravelSync.Domain\obj\Debug\net9.0\TravelSync.Domain.sourcelink.json

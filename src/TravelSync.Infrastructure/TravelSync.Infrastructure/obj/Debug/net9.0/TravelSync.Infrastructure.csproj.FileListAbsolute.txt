@@ -19,3 +19,4 @@ X:\6_Projects\TravelSync\src\TravelSync.Infrastructure\TravelSync.Infrastructure
 X:\6_Projects\TravelSync\src\TravelSync.Infrastructure\TravelSync.Infrastructure\obj\Debug\net9.0\refint\TravelSync.Infrastructure.dll
 X:\6_Projects\TravelSync\src\TravelSync.Infrastructure\TravelSync.Infrastructure\obj\Debug\net9.0\TravelSync.Infrastructure.pdb
 X:\6_Projects\TravelSync\src\TravelSync.Infrastructure\TravelSync.Infrastructure\obj\Debug\net9.0\ref\TravelSync.Infrastructure.dll
+X:\6_Projects\TravelSync\src\TravelSync.Infrastructure\TravelSync.Infrastructure\obj\Debug\net9.0\TravelSync.Infrastructure.sourcelink.json

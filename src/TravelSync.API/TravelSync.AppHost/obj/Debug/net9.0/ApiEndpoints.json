@@ -1,32 +1,16 @@
 [
   {
-    "ContainingType": "TravelSync.Presentation.Controllers.Demo.DemoController",
-    "Method": "GetResultAsync",
-    "RelativePath": "api/Demo",
-    "HttpMethod": "GET",
+    "ContainingType": "TravelSync.Presentation.Controllers.V1.ProductController",
+    "Method": "CreateProduct",
+    "RelativePath": "create",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "test",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TravelSync.Presentation.Controllers.Test.TestController",
-    "Method": "GetResultAsync",
-    "RelativePath": "api/Test",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "test",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "product",
+        "Type": "TravelSync.Domain.DTOs.Products.ProductDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

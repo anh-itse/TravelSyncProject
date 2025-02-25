@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.EntityFrameworkCore;
-using TravelSync.Domain.Abstractions.Identity;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using TravelSync.Domain.Abstractions.Entities;
+using TravelSync.Domain.Abstractions.Identity;
 
 namespace TravelSync.Persistence.Interceptors;
 

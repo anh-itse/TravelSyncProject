@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="DependencyInjection\Exceptions\" />
     <Folder Include="DependencyInjection\Options\" />
-    <Folder Include="UserCases\V1\Product\Commands\" />
     <Folder Include="UserCases\V1\Product\EventHandlers\" />
     <Folder Include="UserCases\V2\" />
   </ItemGroup>

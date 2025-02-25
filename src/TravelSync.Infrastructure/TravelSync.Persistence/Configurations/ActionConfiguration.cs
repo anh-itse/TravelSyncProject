@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TravelSync.Persistence.Constants;
-using TravelSync.Persistence.Entities.Identity;
+using TravelSync.Domain.Constants;
+using TravelSync.Domain.Entities;
 
 namespace TravelSync.Persistence.Configurations;
 

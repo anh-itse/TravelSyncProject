@@ -175,3 +175,4 @@ X:\6_Projects\TravelSync\src\TravelSync.API\TravelSync.AppHost\obj\Debug\net9.0\
 X:\6_Projects\TravelSync\src\TravelSync.API\TravelSync.AppHost\obj\Debug\net9.0\TravelSync.AppHost.genruntimeconfig.cache
 X:\6_Projects\TravelSync\src\TravelSync.API\TravelSync.AppHost\obj\Debug\net9.0\ref\TravelSync.AppHost.dll
 X:\6_Projects\TravelSync\src\TravelSync.API\TravelSync.AppHost\bin\Debug\net9.0\Dapper.dll
+X:\6_Projects\TravelSync\src\TravelSync.API\TravelSync.AppHost\obj\Debug\net9.0\TravelSync.AppHost.sourcelink.json
