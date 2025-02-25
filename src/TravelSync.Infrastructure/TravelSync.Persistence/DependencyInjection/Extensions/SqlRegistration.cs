@@ -12,15 +12,15 @@ public static class SqlRegistration
 {
     public static IServiceCollection AddSqlConfiguration(this IServiceCollection services)
     {
-        services.AddDbContext<ApplicationDbContext>((provider, options) =>
+        services.AddDbContextPool<ApplicationDbContext>(options =>
         {
-            var configuration = provider.GetRequiredService<IConfiguration>();
+            var configuration = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
 
             options.EnableDetailedErrors()
                 .UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection"),
                     sqlOptions => sqlOptions.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.GetName().Name));
-            }, ServiceLifetime.Scoped);
+        });
 
         services.AddDbContextFactory<ApplicationDbContext>(options =>
         {

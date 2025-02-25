@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TravelSync.Presentation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9525a366430fddbdad663e819edc3f669db050b2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d1374ae82dd1b5932fa25b24e94b027e21a08a2")]
 [assembly: System.Reflection.AssemblyProductAttribute("TravelSync.Presentation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TravelSync.Presentation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

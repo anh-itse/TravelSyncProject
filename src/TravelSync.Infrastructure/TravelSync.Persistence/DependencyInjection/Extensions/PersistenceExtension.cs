@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TravelSync.Domain.Abstractions;
+using TravelSync.Persistence.Abstractions;
 using TravelSync.Persistence.Interceptors;
 using TravelSync.Persistence.Repositories;
 
@@ -11,8 +12,8 @@ public static class PersistenceExtension
     public static IServiceCollection AddPersistence(this IServiceCollection services, IConfigurationSection section)
     {
         services.AddSqlConfiguration();
+        services.AddScoped<IDbContextProvider, DbContextProvider>();
         services.AddRepositories();
-
         services.AddScoped<AuditInterceptor>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 

@@ -1,1 +1,4 @@
 .vs/
+# Bỏ qua toàn bộ thư mục bin và obj
+bin/
+obj/

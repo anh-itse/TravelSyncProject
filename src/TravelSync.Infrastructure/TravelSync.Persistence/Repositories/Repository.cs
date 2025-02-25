@@ -1,21 +1,35 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using TravelSync.Domain.Abstractions.Repositories;
+using TravelSync.Persistence.Abstractions;
 
 namespace TravelSync.Persistence.Repositories;
 
-public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IRepository<TEntity, TKey>
+public class Repository<TEntity, TKey> : IRepository<TEntity, TKey>
     where TEntity : class
 {
-    private readonly DbSet<TEntity> _dbSet = dbContext.Set<TEntity>();
+    private readonly ApplicationDbContext _dbContext;
+    private readonly DbSet<TEntity> _dbSet;
+
+    public Repository(IDbContextProvider dbContextProvider)
+    {
+        ArgumentNullException.ThrowIfNull(dbContextProvider);
+
+        this._dbContext = dbContextProvider.CreateDbContext();
+        this._dbSet = this._dbContext.Set<TEntity>();
+    }
+
+    public DbSet<TEntity> DbSet => this._dbSet;
+
+    public ApplicationDbContext DbContext => this._dbContext;
 
     public async Task<TEntity?> GetByIdAsync(TKey id, CancellationToken cancellationToken = default)
         => await this._dbSet.FindAsync([id], cancellationToken);
 
-    public async Task<TEntity?> GetFirstAsync(Expression<Func<TEntity, bool>> predicate,  CancellationToken cancellationToken = default)
+    public async Task<TEntity?> GetFirstAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
         => await this._dbSet.FirstOrDefaultAsync(predicate, cancellationToken);
 
-    public IQueryable<TEntity> GetQueryable() =>  this._dbSet;
+    public IQueryable<TEntity> GetQueryable() => this._dbSet;
 
     public async Task<List<TDto>> GetListAsync<TDto>(
         Expression<Func<TEntity, bool>> predicate,
@@ -53,14 +67,14 @@ public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IReposi
     public async Task InsertAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         await this._dbSet.AddAsync(entity, cancellationToken);
-        await dbContext.SaveChangesAsync(cancellationToken);
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task<TKey> InsertAndGetIdAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         await this._dbSet.AddAsync(entity, cancellationToken);
-        await dbContext.SaveChangesAsync(cancellationToken);
-        var keyProperty = dbContext.Entry(entity).Property<TKey>("Id");
+        await _dbContext.SaveChangesAsync(cancellationToken);
+        var keyProperty = _dbContext.Entry(entity).Property<TKey>("Id");
         return keyProperty.CurrentValue!;
     }
 
@@ -69,7 +83,7 @@ public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IReposi
     public async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken = default)
     {
         this._dbSet.Update(entity);
-        await dbContext.SaveChangesAsync(cancellationToken);
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task DeleteAsync(TKey id, CancellationToken cancellationToken = default)
@@ -79,7 +93,7 @@ public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IReposi
         if (entity is null) return;
 
         this._dbSet.Remove(entity);
-        await dbContext.SaveChangesAsync(cancellationToken);
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public async Task DeleteAsync(Expression<Func<TEntity, bool>> predicate, CancellationToken cancellationToken = default)
@@ -89,7 +103,7 @@ public class Repository<TEntity, TKey>(ApplicationDbContext dbContext) : IReposi
         if (entities.Count == 0) return;
 
         this._dbSet.RemoveRange(entities);
-        await dbContext.SaveChangesAsync(cancellationToken);
+        await _dbContext.SaveChangesAsync(cancellationToken);
     }
 
     public void Delete(TKey id)

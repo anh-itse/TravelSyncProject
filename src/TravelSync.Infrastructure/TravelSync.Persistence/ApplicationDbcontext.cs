@@ -1,7 +1,7 @@
 ﻿using System.Linq.Expressions;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+using TravelSync.Domain.Abstractions;
 using TravelSync.Domain.Abstractions.Entities;
 using TravelSync.Domain.Entities;
 using TravelSync.Persistence.Interceptors;

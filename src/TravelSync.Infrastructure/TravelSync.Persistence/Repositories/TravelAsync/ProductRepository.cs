@@ -1,14 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using TravelSync.Domain.Abstractions;
-using TravelSync.Domain.Abstractions.Repositories.TravelAsync;
+﻿using TravelSync.Domain.Abstractions.Repositories.TravelAsync;
 using TravelSync.Domain.DTOs.Products;
 using TravelSync.Domain.Entities;
+using TravelSync.Persistence.Abstractions;
 
 namespace TravelSync.Persistence.Repositories.TravelAsync;
 
-public class ProductRepository(
-        ApplicationDbContext appDbContext
-    ) : Repository<Product, Guid>(appDbContext), IProductRepository
+public class ProductRepository(IDbContextProvider dbContextProvider) : Repository<Product, Guid>(dbContextProvider), IProductRepository
 {
     public async Task CreateProductAsync(ProductDto product, CancellationToken cancellationToken = default)
     {
